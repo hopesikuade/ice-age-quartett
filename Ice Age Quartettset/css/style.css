@@ -1,0 +1,279 @@
+/* Wendet sich auf alles auf der Webseite an */
+:root {
+    --dark-color: #fff;
+    --background-color: #fff;
+    color: #343a40;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(20, 151, 174, 0.5);
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    z-index: 1000;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    cursor: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    transition: all 0.3s ease;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    box-shadow: 0px 5px 10px rgba(102, 102, 102, 0.15);
+    z-index: 1000;
+}
+
+#header.shrink {
+    padding: .7rem;
+    font-size: 0.8em;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    .logo img {
+        max-width: 6%;
+        max-height: 6%;
+        transition: all 0.3s ease;
+    }
+}
+
+.logo img {
+    max-width: 14%;
+    max-height: 14%;
+}
+
+nav ul li {
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li:hover {
+    color: #39bbf0;
+}
+
+nav ul li.active {
+    color: #39bbf0;
+    text-decoration: underline;
+    text-underline-offset: .5rem;
+    text-decoration-thickness: .1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 2px;
+}
+
+ul {
+    font-size: 0.9em;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#wrapper,
+.card-number,
+.stat-value,
+.stat-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    background-color: var(--dark-color);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 5rem;
+}
+
+.card-wrapper {
+    padding: 1.6rem;
+    padding-bottom: 4rem;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-wrapper:hover {
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+.card-content {
+    display: grid;
+    width: 17rem;
+    height: 25rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    background-color: var(--background-color);
+    border-radius: .7rem;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(82, 82, 82, 0.15);
+}
+
+.card-number {
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.card-title {
+    grid-column: span 3;
+    text-transform: uppercase;
+    padding-left: .5rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.card-image {
+    grid-column: span 4;
+    grid-row: span 5;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-trivia {
+    display: flex;
+    grid-column: span 4;
+    font-size: .7rem;
+    align-items: center;
+    text-align: center;
+    font-style: italic;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.stat-icon img {
+    width: 60%;
+    height: 60%;
+}
+
+.stat-value {
+    display: flex;
+}
+
+.group-a .card-number,
+.group-a .card-trivia {
+    background-color: #7f5539;
+}
+
+.group-a .stat-icon {
+    background-color: #b08968;
+}
+
+.group-b .card-number,
+.group-b .card-trivia {
+    background-color: #04948f;
+}
+
+.group-b .stat-icon {
+    background-color: #07beb8;
+}
+
+.group-c .card-number,
+.group-c .card-trivia {
+    background-color: #e76f51;
+}
+
+.group-c .stat-icon {
+    background-color: #ef9c87;
+}
+
+.group-d .card-number,
+.group-d .card-trivia {
+    background-color: #3a5a40;
+}
+
+.group-d .stat-icon {
+    background-color: #588157;
+}
+
+.group-e .card-number,
+.group-e .card-trivia {
+    background-color: #023047;
+}
+
+.group-e .stat-icon {
+    background-color: #105374;
+}
+
+.group-f .card-number,
+.group-f .card-trivia {
+    background-color: #4e2057;
+}
+
+.group-f .stat-icon {
+    background-color: #8348b3;
+}
+
+.group-g .card-number,
+.group-g .card-trivia {
+    background-color: #6e1423;
+}
+
+.group-g .stat-icon {
+    background-color: #9a173c;
+}
+
+.group-h .card-number,
+.group-h .card-trivia {
+    background-color: #fcb500;
+}
+
+.group-h .stat-icon {
+    background-color: #ffd336;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #39bbf0;
+    color: #fff;
+}
